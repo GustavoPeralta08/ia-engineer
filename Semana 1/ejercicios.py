@@ -25,3 +25,19 @@ def frecuencia_letras(texto: str) -> dict[str, int]:
     return frec
 
 print(frecuencia_letras("Hola mundo"))
+
+#Quinto ejercicio
+def media_y_mediana(nums: list[float]) -> tuple[float, float]:
+    if not nums:
+        raise ValueError("La lista no puede estar vacía")
+    ordenados = sorted(nums)
+    n = len(ordenados)
+    media = sum(ordenados) / n
+    mid = n // 2
+    if n % 2:
+        mediana = ordenados[mid]
+    else:
+        mediana = (ordenados[mid - 1] + ordenados[mid]) / 2
+    return media, mediana
+
+print(media_y_mediana([3, 1, 4, 1, 5]))  # (2.8, 3)
