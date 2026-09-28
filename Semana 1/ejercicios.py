@@ -89,3 +89,23 @@ except FileNotFoundError:
 from utilidades import saludar
 
 print(saludar("Ana"))
+
+#Decimo ejercicio
+import time
+from functools import wraps
+
+def medir_tiempo(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        inicio = time.perf_counter()
+        resultado = func(*args, **kwargs)
+        fin = time.perf_counter()
+        print(f"{func.__name__} tardó {fin - inicio:.4f} s")
+        return resultado
+    return wrapper
+
+@medir_tiempo
+def lenta():
+    time.sleep(1)
+
+lenta()
