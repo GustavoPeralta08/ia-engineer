@@ -77,3 +77,10 @@ cuenta = CuentaBancaria("Ana", 100)
 cuenta.depositar(50)
 cuenta.retirar(30)
 print(cuenta.saldo)  # 120
+
+#Octavo ejercicio
+try:
+    with open("no_existe.txt", encoding="utf-8") as f:
+        contenido = f.read()
+except FileNotFoundError:
+    print("El archivo no existe")
