@@ -15,3 +15,13 @@ print(contar_palabras("texto.txt"))
 numeros = range(1, 21)
 pares = [n for n in numeros if n % 2 == 0]
 print(pares)
+
+#Cuarto ejercicio
+def frecuencia_letras(texto: str) -> dict[str, int]:
+    frec = {}
+    for c in texto.lower():
+        if c.isalpha():
+            frec[c] = frec.get(c, 0) + 1
+    return frec
+
+print(frecuencia_letras("Hola mundo"))
