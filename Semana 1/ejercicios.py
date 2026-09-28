@@ -54,3 +54,26 @@ with open("datos.json", encoding="utf-8") as f:
     leidos = json.load(f)
 
 print(leidos["nombre"])
+
+#Septimo ejercicio
+class CuentaBancaria:
+    def __init__(self, titular: str, saldo: float = 0.0):
+        self.titular = titular
+        self.saldo = saldo
+
+    def depositar(self, cantidad: float) -> None:
+        if cantidad <= 0:
+            raise ValueError("La cantidad debe ser positiva")
+        self.saldo += cantidad
+
+    def retirar(self, cantidad: float) -> None:
+        if cantidad <= 0:
+            raise ValueError("La cantidad debe ser positiva")
+        if cantidad > self.saldo:
+            raise ValueError("Saldo insuficiente")
+        self.saldo -= cantidad
+
+cuenta = CuentaBancaria("Ana", 100)
+cuenta.depositar(50)
+cuenta.retirar(30)
+print(cuenta.saldo)  # 120
