@@ -4,3 +4,9 @@ def invertir(texto: str) -> str:
 
 print(invertir("hola"))
 
+#Segundo ejercicio
+def contar_palabras(ruta: str) -> int:
+    with open(ruta, encoding="utf-8") as f:
+        return len(f.read().split())
+
+print(contar_palabras("texto.txt"))
