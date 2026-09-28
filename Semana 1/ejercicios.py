@@ -10,3 +10,8 @@ def contar_palabras(ruta: str) -> int:
         return len(f.read().split())
 
 print(contar_palabras("texto.txt"))
+
+#tercer ejercicio
+numeros = range(1, 21)
+pares = [n for n in numeros if n % 2 == 0]
+print(pares)
