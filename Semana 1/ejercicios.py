@@ -41,3 +41,16 @@ def media_y_mediana(nums: list[float]) -> tuple[float, float]:
     return media, mediana
 
 print(media_y_mediana([3, 1, 4, 1, 5]))  # (2.8, 3)
+
+#Sexto ejercicio
+import json
+
+datos = {"nombre": "Ana", "edad": 30, "lenguajes": ["Python", "C#"]}
+
+with open("datos.json", "w", encoding="utf-8") as f:
+    json.dump(datos, f, indent=4, ensure_ascii=False)
+
+with open("datos.json", encoding="utf-8") as f:
+    leidos = json.load(f)
+
+print(leidos["nombre"])
